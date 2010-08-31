@@ -12,6 +12,7 @@ import android.view.View;
 
 
 
+
 public class DistanceCalculator extends Activity {
     /** Called when the activity is first created. */
 	
