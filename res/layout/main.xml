@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Enter X1:"
+    />
+<EditText 
+	android:text="" 
+	android:id="@+id/x1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</EditText>
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Enter Y1:"
+    />
+<EditText 
+	android:text="" 
+	android:id="@+id/y1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</EditText>
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Enter X2:"
+    />
+<EditText 
+	android:text="" 
+	android:id="@+id/x2" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</EditText>
+	<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Enter Y2:"
+    />
+<EditText 
+	android:text="" 
+	android:id="@+id/y2" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</EditText>
+<Button 
+	android:text="Calculate" 
+	android:id="@+id/calculate" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+	</Button>
+<Button 
+	android:text="reset" 
+	android:id="@+id/reset" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+	</Button>
+<TextView 
+	android:text="" 
+	android:id="@+id/txtans" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</TextView>
+
+
+</LinearLayout>

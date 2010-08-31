@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, DistanceCalculator!</string>
+    <string name="app_name">Distance Calculator</string>
+    <string name="short_notification_text">Distance Calculator</string>
+</resources>
