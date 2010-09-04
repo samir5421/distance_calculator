@@ -49,8 +49,14 @@
 	android:layout_height="wrap_content">
 	</EditText>
 <Button 
-	android:text="Calculate" 
+	android:text="Calculate Distance" 
 	android:id="@+id/calculate" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+	</Button>
+<Button 
+	android:text="Calculate Slope" 
+	android:id="@+id/calculateslope" 
 	android:layout_width="wrap_content" 
 	android:layout_height="wrap_content">
 	</Button>

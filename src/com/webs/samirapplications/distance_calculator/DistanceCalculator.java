@@ -1,6 +1,8 @@
 package com.webs.samirapplications.distance_calculator;
 
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -28,6 +30,7 @@ public class DistanceCalculator extends Activity {
 	private double yOne;
 	private double xTwo;
 	private double yTwo;
+	private Button calculateslope;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class DistanceCalculator extends Activity {
     private void initControls()
     {
     	calculate = (Button)findViewById(R.id.calculate);
+    	calculateslope = (Button)findViewById(R.id.calculateslope);
     	txtans = (TextView)findViewById(R.id.txtans);
     	reset = (Button)findViewById(R.id.reset);
     	x1 = (EditText)findViewById(R.id.x1);
@@ -50,7 +54,16 @@ public class DistanceCalculator extends Activity {
     	{
     		public void onClick (View v)
       		{
-    			calculate();
+					calculate();
+      		} 
+      		{Toast.makeText(DistanceCalculator.this, R.string.short_notification_text, Toast.LENGTH_SHORT).show();}
+       	});
+    	
+    	calculateslope.setOnClickListener(new Button.OnClickListener()
+    	{
+    		public void onClick (View v)
+      		{
+					calculateslope();
       		} 
       		{Toast.makeText(DistanceCalculator.this, R.string.short_notification_text, Toast.LENGTH_SHORT).show();}
        	});
@@ -63,7 +76,7 @@ public class DistanceCalculator extends Activity {
 		});
     	
     }
-    public void calculate()
+    public void calculate() 
     {
     	xOne=Double.parseDouble(x1.getText().toString());
     	xTwo=Double.parseDouble(x2.getText().toString());
@@ -73,8 +86,22 @@ public class DistanceCalculator extends Activity {
     	double x = ( xTwo - xOne ); 
 		double y = ( yTwo - yOne );
 		ans = Math.sqrt ( x*x + y*y );
-				
-		txtans.setText(Double.toString(ans));
+		String answer = " The distance is " + ans;		
+		txtans.setText(answer);
+    }
+    
+    public void calculateslope() 
+    {
+    	xOne=Double.parseDouble(x1.getText().toString());
+    	xTwo=Double.parseDouble(x2.getText().toString());
+    	yOne=Double.parseDouble(y1.getText().toString());
+    	yTwo=Double.parseDouble(y2.getText().toString());
+		
+    	double x = ( xTwo - xOne ); 
+		double y = ( yTwo - yOne );
+		ans = y/x;
+		String answer = " The slope is " + ans;
+		txtans.setText(answer);
     }
     
     private void reset()
