@@ -48,30 +48,62 @@
 	android:layout_width="fill_parent" 
 	android:layout_height="wrap_content">
 	</EditText>
+	<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Enter Slope:"
+    />
+	<EditText 
+	android:text="" 
+	android:id="@+id/slope" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+	</EditText>
+<RelativeLayout 
+	android:id="@+id/RelativeLayout01" 
+	android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    >
 <Button 
 	android:text="Calculate Distance" 
 	android:id="@+id/calculate" 
 	android:layout_width="wrap_content" 
 	android:layout_height="wrap_content">
 	</Button>
+
 <Button 
 	android:text="Calculate Slope" 
 	android:id="@+id/calculateslope" 
 	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content">
+	android:layout_height="wrap_content"
+	android:layout_toRightOf="@id/calculate">
 	</Button>
-<Button 
-	android:text="reset" 
+	<Button 
+	android:text="Reset" 
 	android:id="@+id/reset" 
 	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content">
+	android:layout_height="wrap_content"
+	android:layout_toRightOf="@id/calculateslope">
+		</Button>
+<Button 
+	android:text="Calculate Point-Slope" 
+	android:id="@+id/pointslope" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_below="@id/calculate">
 	</Button>
+	
+	</RelativeLayout>
+
+
 <TextView 
 	android:text="" 
 	android:id="@+id/txtans" 
 	android:layout_width="fill_parent" 
 	android:layout_height="wrap_content">
 	</TextView>
+
+
 
 
 </LinearLayout>

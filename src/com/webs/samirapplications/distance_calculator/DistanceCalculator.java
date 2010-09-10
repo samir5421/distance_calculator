@@ -1,8 +1,6 @@
 package com.webs.samirapplications.distance_calculator;
 
 
-import java.io.IOException;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
@@ -22,6 +20,9 @@ public class DistanceCalculator extends Activity {
 	private EditText x2;
 	private EditText y1;
 	private EditText y2;
+	private EditText slope;
+	private double slop;
+	private Button pointslope;
 	private double ans;
 	private TextView txtans;
 	private Button calculate;
@@ -42,6 +43,7 @@ public class DistanceCalculator extends Activity {
     private void initControls()
     {
     	calculate = (Button)findViewById(R.id.calculate);
+    	pointslope = (Button)findViewById(R.id.pointslope);
     	calculateslope = (Button)findViewById(R.id.calculateslope);
     	txtans = (TextView)findViewById(R.id.txtans);
     	reset = (Button)findViewById(R.id.reset);
@@ -49,6 +51,7 @@ public class DistanceCalculator extends Activity {
     	x2 = (EditText)findViewById(R.id.x2);
     	y1 = (EditText)findViewById(R.id.y1);
     	y2 = (EditText)findViewById(R.id.y2);
+    	slope = (EditText)findViewById(R.id.slope);
     	
     	calculate.setOnClickListener(new Button.OnClickListener()
     	{
@@ -67,6 +70,13 @@ public class DistanceCalculator extends Activity {
       		} 
       		{Toast.makeText(DistanceCalculator.this, R.string.short_notification_text, Toast.LENGTH_SHORT).show();}
        	});
+    	
+    	pointslope.setOnClickListener(new Button.OnClickListener() 
+		{ public void onClick (View v)
+			{
+				pointslope(); 
+			}
+		});
     	
     	reset.setOnClickListener(new Button.OnClickListener() 
 		{ public void onClick (View v)
@@ -100,8 +110,17 @@ public class DistanceCalculator extends Activity {
     	double x = ( xTwo - xOne ); 
 		double y = ( yTwo - yOne );
 		ans = y/x;
-		String answer = " The slope is " + ans;
-		txtans.setText(answer);
+		slope.setText(Double.toString(ans));
+    }
+    
+    private void pointslope()
+    {
+    	xOne=Double.parseDouble(x1.getText().toString());
+    	yOne=Double.parseDouble(y1.getText().toString());
+    	slop=Double.parseDouble(slope.getText().toString());
+    	
+    	String answer = "y-"+yOne+"="+slop+"(x-"+xOne+")";
+    	txtans.setText(answer);
     }
     
     private void reset()
@@ -111,5 +130,6 @@ public class DistanceCalculator extends Activity {
 		x2.setText("");
 		y1.setText("");
 		y2.setText("");
+		slope.setText("");
 	}
 }
