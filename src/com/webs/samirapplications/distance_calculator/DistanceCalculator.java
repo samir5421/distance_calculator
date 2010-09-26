@@ -57,7 +57,12 @@ public class DistanceCalculator extends Activity {
     	{
     		public void onClick (View v)
       		{
+    			try{
 					calculate();
+    			}
+					catch(Exception e){
+						error();
+					}
       		} 
       		{Toast.makeText(DistanceCalculator.this, R.string.short_notification_text, Toast.LENGTH_SHORT).show();}
        	});
@@ -66,16 +71,26 @@ public class DistanceCalculator extends Activity {
     	{
     		public void onClick (View v)
       		{
+    			try{
 					calculateslope();
+    			}
+    			catch(Exception e){
+    				error();
+    			}
       		} 
       		{Toast.makeText(DistanceCalculator.this, R.string.short_notification_text, Toast.LENGTH_SHORT).show();}
        	});
     	
     	pointslope.setOnClickListener(new Button.OnClickListener() 
-		{ public void onClick (View v)
-			{
+		{ public void onClick (View v){
+			
+			try{
 				pointslope(); 
 			}
+		catch(Exception e){
+			error();
+		}
+		}
 		});
     	
     	reset.setOnClickListener(new Button.OnClickListener() 
@@ -131,5 +146,8 @@ public class DistanceCalculator extends Activity {
 		y1.setText("");
 		y2.setText("");
 		slope.setText("");
+	}
+    public void error(){
+		{Toast.makeText(DistanceCalculator.this, R.string.error, Toast.LENGTH_LONG).show();}	
 	}
 }
